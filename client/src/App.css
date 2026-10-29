@@ -1,0 +1,775 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #243047;
+  background: #fff;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 7%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #183b36;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: #c49a57;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #243047;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #c49a57;
+}
+
+.primary-button {
+  display: inline-block;
+  border: 1px solid #183b36;
+  padding: 13px 22px;
+  background: #183b36;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #28564e;
+  transform: translateY(-1px);
+}
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 75px 7%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 25, 23, 0.85),
+      rgba(10, 25, 23, 0.25)
+    ),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600")
+      center / cover no-repeat;
+  color: #fff;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 620px;
+}
+
+.subtitle {
+  color: #c49a57;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.rooms {
+  padding: 75px 7%;
+  text-align: center;
+  background: #f8f8f5;
+}
+
+.rooms h2,
+.about h2,
+.contact h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: 18px;
+}
+
+.section-description {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #697386;
+  line-height: 1.8;
+}
+
+.room-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.room-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.room-info {
+  padding: 22px;
+}
+
+.room-info h3 {
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.room-info p {
+  color: #697386;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.room-info h4 {
+  margin-bottom: 18px;
+  color: #183b36;
+  font-size: 18px;
+}
+
+.about {
+  padding: 75px 7%;
+  text-align: center;
+  background: #fff;
+}
+
+.about-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.9;
+  color: #697386;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.feature-card {
+  padding: 28px;
+  border: 1px solid #e7e9e5;
+  border-radius: 10px;
+  background: #fafaf7;
+}
+
+.feature-card h3 {
+  margin-bottom: 14px;
+  color: #183b36;
+}
+
+.feature-card p {
+  color: #697386;
+  line-height: 1.8;
+}
+
+.contact {
+  padding: 75px 7%;
+  background: #f8f8f5;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: left;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form label,
+.booking-modal label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #243047;
+}
+
+.contact-form input,
+.contact-form textarea,
+.booking-modal input,
+.booking-modal select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8ddd9;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: #fff;
+  color: #243047;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.booking-modal input:focus,
+.booking-modal select:focus {
+  outline: 2px solid #c49a57;
+  border-color: transparent;
+}
+
+footer {
+  padding: 35px 7%;
+  text-align: center;
+  background: #183b36;
+  color: #fff;
+  line-height: 2;
+}
+
+footer h3 {
+  font-size: 24px;
+}
+
+/* Booking modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(9, 20, 18, 0.7);
+  overflow-y: auto;
+}
+
+.booking-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.booking-modal h2 {
+  color: #183b36;
+  margin-bottom: 24px;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  color: #243047;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.selected-room {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 22px;
+  border-radius: 6px;
+  background: #f8f8f5;
+  color: #183b36;
+}
+
+.date-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.submit-booking {
+  width: 100%;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .room-container,
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    gap: 16px;
+    padding: 16px 5%;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 450px;
+    padding: 55px 6%;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .rooms,
+  .about,
+  .contact {
+    padding: 55px 6%;
+  }
+
+  .room-container,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .room-card img {
+    height: 230px;
+  }
+
+  .contact-form,
+  .booking-modal {
+    padding: 22px;
+  }
+
+  .date-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+
+
+/* Fix the overall website width */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Make the navbar use the full browser width */
+.navbar {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Make the hero banner full width */
+.hero {
+  width: 100%;
+  min-height: 520px;
+  padding-left: 8%;
+  padding-right: 8%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Keep content spacious and aligned */
+.rooms,
+.about,
+.contact {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Use the available width for the room cards */
+.room-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure the footer also spans the page */
+footer {
+  width: 100%;
+}
+
+/* Laptop and desktop adjustments */
+@media (min-width: 1200px) {
+  .navbar {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .hero {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .rooms,
+  .about,
+  .contact {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+
+/* Keep the navbar visible while scrolling */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 82px;
+  background: #ffffff;
+}
+
+/* Keep navigation items aligned */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Make Book Now visible */
+.navbar > .primary-button {
+  flex-shrink: 0;
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  background: #183b36;
+  color: #ffffff;
+  position: relative;
+  z-index: 1001;
+}
+
+
+/* Improve Rooms section heading */
+.rooms {
+  padding-top: 55px;
+  padding-bottom: 75px;
+  scroll-margin-top: 82px;
+}
+
+.rooms > .subtitle {
+  margin-bottom: 12px;
+  color: #b28a4e;
+}
+
+.rooms > h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #183b36;
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.rooms > .section-description {
+  margin-top: 0;
+  margin-bottom: 32px;
+  color: #697386;
+  line-height: 1.7;
+}
+
+/* Fix About section heading visibility */
+.about h2 {
+  color: #183b36 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 700;
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.3;
+  text-shadow: none;
+}
+
+/* Keep the About section text readable */
+.about-intro {
+  color: #566174;
+  opacity: 1;
+}
+
+/* Improve the section label */
+.about > .subtitle {
+  color: #a77d3f;
+  opacity: 1;
+}
+
+/* Keep feature headings dark and clear */
+.feature-card h3 {
+  color: #183b36;
+  opacity: 1;
+}
+
+
+/* Fix Contact section heading visibility */
+.contact h2 {
+  color: #183b36 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 700;
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.3;
+  text-shadow: none;
+}
+
+/* Contact section label */
+.contact > .subtitle {
+  color: #a77d3f;
+  opacity: 1;
+}
+
+/* Contact description */
+.contact > .section-description {
+  color: #566174;
+  opacity: 1;
+}
+
+/* Contact form labels */
+.contact-form label {
+  color: #243047;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Input and textarea text */
+.contact-form input,
+.contact-form textarea {
+  color: #243047;
+  background: #ffffff;
+  border: 1px solid #cbd2ce;
+  opacity: 1;
+}
+
+/* Placeholder text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #737d89;
+  opacity: 1;
+}
+
+/* Contact form background */
+.contact-form {
+  background: #ffffff;
+  border: 1px solid #e2e7e3;
+}
+
+/* Manage Bookings navigation button */
+.nav-manage-button {
+  background: transparent;
+  color: #183b36;
+  border: 1px solid #c49a57;
+  border-radius: 5px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nav-manage-button:hover {
+  background: #183b36;
+  color: white;
+}
+
+/* Manage Bookings page */
+.manage-bookings-page {
+  min-height: 65vh;
+  padding: 60px 5%;
+  background: #f8f8f5;
+}
+
+.manage-bookings {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.manage-bookings h1 {
+  color: #183b36;
+  margin-bottom: 15px;
+}
+
+.manage-bookings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.booking-count {
+  margin: 20px 0;
+  color: #183b36;
+}
+
+.booking-error {
+  padding: 12px;
+  color: #a32020;
+  background: #fff0f0;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+
+.booking-message {
+  padding: 12px;
+  color: #183b36;
+  background: #eaf4ed;
+  border-radius: 5px;
+}
+
+.bookings-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.bookings-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  white-space: nowrap;
+}
+
+.bookings-table th {
+  background: #183b36;
+  color: white;
+}
+
+.bookings-table tbody tr:hover {
+  background: #f8f8f5;
+}
+
+.bookings-table select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+}
+
+.delete-booking-button {
+  background: #a83232;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-booking-button:hover {
+  background: #812525;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .manage-bookings-page {
+    padding: 35px 4%;
+  }
+
+  .nav-manage-button {
+    padding: 8px;
+  }
+
+  .manage-bookings-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
